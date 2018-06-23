@@ -1,0 +1,1 @@
+// function vs block scope
