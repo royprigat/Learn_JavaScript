@@ -1,0 +1,40 @@
+:root {
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur: 10px;
+}
+
+html,
+body {
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(2, 2, 92);
+    color: white;
+    padding-left: 50px;
+    font-size: 25px;
+}
+
+img {
+    width: 50%;
+    height: auto;
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+    margin-top: 20px;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+.controls {
+    margin: auto;
+    padding-right: 20px;
+}
+
+.hl {
+    color: var(--base);
+}
