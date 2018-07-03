@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reference vs Copy</title>
+</head>
+
+<body>
+
+    <script>
+        // start with strings, numbers and booleans
+        let age = 100;
+        let age2 = age;
+        console.log(age, age2);
+        age = 200;
+        console.log(age, age2);
+
+        let name = 'Roy';
+        let name2 = name;
+        console.log(name, name2);
+        name = 'Royal';
+        console.log(name, name2);
+
+        // Let's say we have an array
+        const players = ['Roy', 'Prigat', 'Ryan', 'Jack'];
+        // and we want to make a copy of it.
+        const team = players;
+        console.log(players, team);
+        // You might think we can just do something like this:
+        team[3] = 'Lux';
+        console.log(players, team);
+        // So, how do we fix this? We take a copy instead!
+        const team2 = players.slice();
+        // or use the new ES6 Spread
+        const team4 = [...players];
+        team4[3] = 'heeee hawww';
+        console.log(team4);
+        const team5 = Array.from(players);
+
+        // The same thing goes for objects, let's say we have a person object
+
+        // with Objects
+        const person = {
+            name: 'Roy Prigat',
+            age: 100
+        };
+
+        const captain = person;
+        captain.number = 99;
+
+        console.log(person, captain);
+
+        // Make a copy instead
+        const cap2 = Object.assign({}, person, {
+            number: 120,
+            age: 16
+        });
+        console.log(person, cap2);
+
+        console.clear();
+        console.log(cap2);
+
+        const dev = Object.assign({}, cap2);
+        const dev2 = JSON.parse(JSON.stringify(cap2));
+
+        console.log(dev);
+        console.log(dev2);
+    </script>
+</body>
+
+</html>
