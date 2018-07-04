@@ -87,3 +87,10 @@ input[type=text] {
     outline: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+.reset {
+    padding: 5px;
+    margin-top: 5px;
+    color: white;
+    background: rgb(193, 29, 29);
+}
