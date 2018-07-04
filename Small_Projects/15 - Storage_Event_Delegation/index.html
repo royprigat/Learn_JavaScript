@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Local Storage & Event Delegations</title>
+
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>LOCAL TAPAS</h2>
+        <p></p>
+        <ul class="plates">
+            <li>Loading Tapas...</li>
+        </ul>
+        <form class="menu">
+            <input type="text" name="item" placeholder="Item Name" required>
+            <button type="submit">+ Add Item</button>
+        </form>
+    </div>
+
+    <script>
+        'use strict';
+        const form = document.querySelector('.menu');
+        const itemsList = document.querySelector('.plates');
+        const items = [];
+
+        function addItem(e) {
+            e.preventDefault();
+            const inputVal = this.querySelector('input[type=text]').value;
+            const newItem = {
+                inputVal,
+                done: false
+            };
+            items.push(newItem);
+            populateList(items, itemsList);
+            this.reset();
+        };
+
+
+        function populateList(plates = [], platesList) {
+            platesList.innerHTML = plates.map((plate, i) => {
+                return `
+                <li>
+                <input type="checkbox" data-index="${i}" id="item${i}" ${plate.done == true ? 'checked' : ''}/>
+                <label for="item${i}">${plate.inputVal}</label>
+                </li>
+                `;
+            }).join('');
+        };
+
+        form.addEventListener('submit', addItem)
+    </script>
+</body>
+
+</html>
