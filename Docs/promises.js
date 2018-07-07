@@ -5,3 +5,8 @@ const promise = new Promise((resolve, reject) => {
     }
     reject(new Error('In 10% of the cases, I fail. Miserably.'));
 });
+
+// Every promise has a .then method
+promise
+    .then((resolvedValue) => {console.log(resolvedValue);})
+    .catch((err) => {console.log(err)});
