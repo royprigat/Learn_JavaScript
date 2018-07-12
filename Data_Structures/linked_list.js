@@ -1,3 +1,10 @@
+// SPECS
+// - Insertion O(1)
+// - Find/Access O(N)
+// - Peek O(1)
+
+
+// IMPLEMENTATION
 class Node {
     constructor(data, next = null) {
         this.data = data;
@@ -63,7 +70,7 @@ class LinkedList {
 
 
 
-// testing
+// TESTING
 let list = new LinkedList();
 
 // append, prepend
@@ -85,3 +92,5 @@ list.toString();
 // peek
 console.log("Peek");
 list.peek();
+
+
