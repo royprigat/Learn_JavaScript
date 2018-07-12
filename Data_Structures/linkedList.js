@@ -1,7 +1,6 @@
 // SPECS
 // - Insertion O(1)
 // - Find/Access O(N)
-// - Peek O(1)
 
 
 // IMPLEMENTATION
@@ -54,8 +53,22 @@ class LinkedList {
             }
         }
     }
-    peek() {
-        console.log(this.tail.data);
+    removeTail() {
+        if (this.tail === this.head) {
+            this.head = null;
+            this.tail = null;
+        }
+
+        let current = this.head;
+        while (current.next) {
+            if (!current.next.next) {
+                current.next = null;
+            } else {
+                current = current.next;
+            }
+        }
+
+        this.tail = current;
     }
     toString() {
         if(!this.head) {throw 'List is empty...';}
@@ -68,29 +81,25 @@ class LinkedList {
     }
 }
 
+export default LinkedList;
+
 
 
 // TESTING
-let list = new LinkedList();
+// let list = new LinkedList();
 
 // append, prepend
-console.log("Prepend-Append:");
-list.append(4);
-list.prepend(1);
-list.append(6);
-list.prepend(10);
-list.toString();
+// console.log("Prepend/Append:");
+// list.append(4);
+// list.prepend(1);
+// list.append(6);
+// list.prepend(10);
+// list.toString();
 
 // delete
-console.log("Delete:");
-list.delete(10);
-list.delete(5);
-list.delete(4);
-list.delete(1);
-list.toString();
-
-// peek
-console.log("Peek");
-list.peek();
-
-
+// console.log("Delete:");
+// list.delete(10);
+// list.delete(5);
+// list.delete(4);
+// list.delete(1);
+// list.toString();
