@@ -1,5 +1,6 @@
 // SPECS
-
+// Insertion/Deletion - O(1)
+// Searc/Access - O(n) 
 
 
 
@@ -28,16 +29,18 @@ class Stack {
     }
 }
 
+export default Stack;
+
 
 // TESTING
 
 // Push/Pop
-let stack = new Stack();
-stack.push(1);
-stack.push(2);
-stack.pop();
-stack.push(3);
-stack.toString();
+// let stack = new Stack();
+// stack.push(1);
+// stack.push(2);
+// stack.pop();
+// stack.push(3);
+// stack.toString();
 
 // Peek
-stack.peek();
+// stack.peek();
