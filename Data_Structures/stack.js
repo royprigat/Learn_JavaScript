@@ -5,11 +5,11 @@
 
 
 // IMPLEMENTATION
-import linkedList from './linkedList';
+import LinkedList from './linkedList';
 
 class Stack {
     constructor() {
-        this.list = new linkedList();
+        this.list = new LinkedList();
     }
     isEmpty() {
         return !this.list.tail;

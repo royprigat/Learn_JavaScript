@@ -53,6 +53,18 @@ class LinkedList {
             }
         }
     }
+    removeHead() {
+        if (!this.head) {
+            return null;
+        }
+
+        if (this.head.next) {
+            this.head = this.head.next;
+        } else {
+            this.head = null;
+            this.tail = null;
+        }
+    }
     removeTail() {
         if (this.tail === this.head) {
             this.head = null;
